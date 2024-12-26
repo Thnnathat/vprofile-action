@@ -18,12 +18,12 @@ jobs:
       - name: Checkstyle
         run: mvn checkstyle:checkstyle
 
-      # Setup java 17
-      - name: Set Java 17
+      # Setup java 11
+      - name: Set Java 11
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '11'
 
       # Setup sonar-scanner
       - name: Setup SonarQube
@@ -51,3 +51,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_URL }} #OPTIONAL
+       
